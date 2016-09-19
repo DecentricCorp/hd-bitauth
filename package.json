@@ -1,0 +1,21 @@
+{
+  "name": "hd-bitauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app-extra.js",
+  "dependencies": {
+    "bigi": "^1.4.2",
+    "bitcoinjs-lib": "^2.0.0",
+    "bs58": "^3.0.0",
+    "buffer": "^4.9.1",
+    "crypto-js": "^3.1.6",
+    "ecurve": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browser": "browserify hd-bitauth.js --standalone bitauth > hd-bitauth-browser.js"
+  },
+  "author": "Shannon Code",
+  "license": "MIT"
+}
