@@ -2,8 +2,58 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="hd-bitauth-browser.js" ></script>
-        <script src="app.js" ></script>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
     </head>
     <body>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form>
+                            <br />
+                                <div class="input-group col-lg-6">
+                                    <span class="input-group-addon" id="basic-addon1">@</span>
+                                    <input type="text" class="form-control" name="email" placeholder="Email address" aria-describedby="basic-addon1">
+                                </div>
+                            <br />
+                            <div class="input-group col-lg-6">
+                                <span class="input-group-addon" id="basic-addon1">***</span>
+                                <input type="password" class="form-control" name="pass" placeholder="Password" aria-describedby="basic-addon1">
+                            </div>
+                            <br />
+                            <div class="alert alert-danger" style="display:none" role="alert">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                <span class="msg"></span>
+                            </div>
+                            <div class="row">
+                                <div class="pager">
+                                    <button class="auth btn btn-default dropdown-toggle" type="button">Authenticate</button><br /><br />
+                                    <button class="address disabled btn btn-default dropdown-toggle" type="button">No Address Generated</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Login using the credentials</div>
+                    <div class="panel-body">
+                        shannon@cov.al <br />
+                        secretPassword <br />
+                        <hr>
+                        Address: 1HomsdJVrTJqiLsRZrmdU1WnnFYj3kntfN
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="app.js" ></script>
     </body>
 </html>

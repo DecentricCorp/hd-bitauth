@@ -1,3 +1,16 @@
+$(".auth").click(function(){
+	var email = $("[name='email']").val()
+	var password = $("[name='pass']").val()
+	loginFlow(email,password, function(token, address, err){
+        $(".address").text("Address: "+address)
+        if (!err) {
+            doAlert("Authenticated Sucessfully", "success")
+        } else {
+            doAlert(err, "error")
+        }
+	})
+}) 
+
 function loginFlow(email, password, cb) {
 	var keyPair, nonce, signature
 	var email = email
@@ -11,9 +24,10 @@ function loginFlow(email, password, cb) {
 				getToken(keyPair.getAddress(), email, JSON.stringify(signature), function(token, error, msg){
 					if (!error) {
 						authToken = token
-						return cb(authToken)
+						return cb(authToken, keyPair.getAddress(), null)
 					} else {
-						alert(msg.statusText + " : "+ msg.responseText)
+                        return cb(null, keyPair.getAddress(), msg.statusText + " : "+ msg.responseText)
+						
 					}						
 				})
 			})
@@ -59,4 +73,18 @@ function generateKeyPair(email, password, cb) {
 function signMsg(msg, keyPair, cb) {	
 	var signature = bitauth.bitcoin.message.sign(keyPair, msg, bitauth.bitcoin.networks.bitcoin)
 	return cb(signature)
+}
+
+function doAlert(msg, alertType){
+    $(".alert .msg").text(msg)
+    if (alertType === "error") {
+        $(".alert").show()
+        $(".alert").addClass("alert-danger")
+        $(".alert").removeClass("alert-success")
+    } else {
+        $(".alert").show()
+        $(".alert").addClass("alert-success")
+        $(".alert").removeClass("alert-danger")
+    }
+    
 }
